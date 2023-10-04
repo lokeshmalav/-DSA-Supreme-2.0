@@ -1,24 +1,37 @@
-/*
-Pattern
-N = 4
-1
-21
-321
-4321
-*/
-#include<iostream>
+// member of fabbonacci series or not 
+
+#include <iostream> 
 using namespace std;
 
-int main(){
-  int i,j,n;
-    cin>>n;
-    for(i=1;i<n;i++){
-       int p=i;
-        for(j=1;j<=i;j++){
-          cout<<p;
-          p--;
+bool checkMember(int n){
+    int f1 = 1, f2 = 1;
+    if(n==0 && n==1){
+        return false;
+    }
+    else{
+        while(1){
+            int temp = f1 + f2;
+            f1 = f2;
+            f2 = temp;
+            if(temp==n){
+                return true;
+            }
+            else if(temp>n){
+                return false;
+            }
         }
-        cout<<endl;
-        
+    }
+
+}
+
+int main (){
+    int n;
+    cin>>n;
+    bool b= checkMember(n);
+    if(b==1){
+        cout<<" "<<n<< " is a member of fabbonaacci series"<<endl;
+    }
+    else{
+        cout<<" "<<n<< " is not a member of fabbonaacci series"<<endl;
     }
 }

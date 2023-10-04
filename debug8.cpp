@@ -1,35 +1,33 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
+#include <climits>
 
-void printPatt(int n){
-    int i=1;
-    while(i<=(n)){
-        int gaps = n-2*i+1,k=1;
-        if(i>(n+1)/2){
-            int no = (n+1)/2;
-            gaps = 2*(i%no);
+
+int main(){
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    
+    if(n==0||n==1){
+        cout<<INT_MIN;
+    }
+    else{
+        int max = INT_MIN;
+        for(int i=0;i<n;i++){
+            if(max<arr[i]){
+                max=arr[i];
+            }
         }
-        while(k<=gaps/2){
-            cout<<" ";
-            k = k + 1;
+        int second = INT_MIN;
+        for(int i=0;i<n;i++){
+            if(max>arr[i] && arr[i]>second){
+                second = arr[i];
+            }
         }
-        int ch = n - gaps;
-        while(ch>=1){
-            cout<<"*";
-            ch = ch - 1;
-        }
-        k = 1;
-        while(k<=gaps/2){
-            cout<<" ";
-            k = k + 1;
-        }
-        cout<<"\n";
-        i = i + 1;
+        cout<<second;
     }
 }
 
-int main(){
-    int n; 
-    cin>>n;
-    printPatt(n);
-}

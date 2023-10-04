@@ -1,17 +1,26 @@
+// Area of rectangle 
 
 #include<iostream>
 using namespace std;
 
 int main() {
-	char c;
-    cin>>c;
-    if('a'<=c && c<= 'z'){
-        cout<<0;
-    }
-	else if('A'<=c && c<= 'Z'){
-        cout<<1;
-    }
-    else{
-        cout<<-1;
-    }
+	double width, height;
+	cin >> width >> height;
+	double area = width * height;    //  output of the area should be double type
+	cout << area << endl;
+	return 0;
 }
+
+
+
+
+// #include<iostream>
+// using namespace std;
+
+// int main() {
+// 	double width, height;
+// 	cin >> width >> height;
+// 	int area = width * height;
+// 	cout << area << endl;
+// 	return 0;
+// }

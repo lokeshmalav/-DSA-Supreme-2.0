@@ -1,70 +1,38 @@
-// #include<iostream>
-// using namespace std;
-
-
-// int main(){
-//     int n;
-//     cin>>n;
-//     int i=1;
-//     while(i<=n){
-//         int j = i,count = 1;
-//         while(count<=i){
-//             cout<<j;
-//             j = j + 1;
-//             count = count + 1;
-//         }
-//         cout<<"\n";
-//         i = i + 1;
-//     }
-// }
-
-//          OR
-
-// #include <iostream>
-//   using namespace std;
- 
-
-//  int main (){
-//     int n;
-//      cin>>n;
-//      int i=0;
-//      while(i<n){
-//         int j=0;
-//         int val = i;
-//         while(j<i){
-//             cout<<val;
-//             val++;
-//             j++;
-
-//         }
-//         cout<<endl;
-//         i++;
-//      }
-
-//  }
-
-
-
-
-//  OR
-
+// converts binary to decimal
 
 #include<iostream>
 using namespace std;
 
-
-int main(){
-    int n;
+int main() {
+    int n,sum=0,factor=1;
     cin>>n;
-    int i=1;
-    while(i<=n){
-        int j = 1;
-        while(j<=i){
-            cout<<(i+j-1);
-            j ++;
-           
-        }
-        cout<<"\n";
-        i = i + 1;
+    while(n!=0){
+        int digit = n%10;     //  use modulo 
+        sum = sum + digit*factor;
+        factor = 2*factor;
+        n = n/10;         // use divide
     }
+    cout<<sum;
+    return 0;
 }
+
+
+
+
+
+
+// #include<iostream>
+// using namespace std;
+
+// int main() {
+//     int n,sum=0,factor=1;
+//     cin>>n;
+//     while(n!=0){
+//         int digit = n/10;
+//         sum = sum + digit*factor;
+//         factor = 2*factor;
+//         n = n%10;
+//     }
+//     cout<<sum;
+//     return 0;
+// }

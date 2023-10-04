@@ -1,62 +1,46 @@
-// /*
-// Pattern
-// N = 4
-//    *
-//   ***
-//  *****
-// *******
-// */
-// #include<iostream>
-// using namespace std;
-// int main(){
-//     int n;
-//     cin>>n;
-//     int i=1;
-//     while(i<n){
-//         int j = i,count = 2*n+1,gaps=(n-i-1),k=1;
-//         while(k<gaps){
-//             cout<<" ";
-//             k = k + 1;
-//         }
-//         int m = 1,ch = count - 2*gaps;
-//         while(m<ch){
-//             cout<<"*";
-//             m = m + 1;
-//         }
-//         k = 1;
-//         while(k<gaps){
-//             cout<<" ";
-//             k = k + 1;
-//         }
-//         cout<<"\n";
-//         i = i + 1;
-//     }
-// }
-
+// print all prime no, from 2- N both inclusive
 
 #include<iostream>
 using namespace std;
+
 int main(){
-    int n;
+    int n, flag=1;
     cin>>n;
-    int i=1;
-    while(i<=n){
-        int j = i,count = 2*n-1,gaps=(n-i),k=1;
-        while(k<=gaps){
-            cout<<" ";
-            k = k + 1;
+    for(int i=2;i<=n;i++){
+        flag = 1;
+        for(int j=2;j<=i/2;j++){
+            if(i%j==0){
+                flag = 0;
+            }
         }
-        int m = 1,ch = count - 2*gaps;
-        while(m<=ch){
-            cout<<"*";
-            m = m + 1;
+        if(flag==1){
+            cout<<i<<endl;
         }
-        k = 1;
-        while(k<=gaps){
-            cout<<" ";
-            k = k + 1;
-        }
-        cout<<"\n";
-        i = i + 1;
     }
+    return 0;
 }
+
+
+
+
+
+
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+//     int n, flag=1;
+//     cin>>n;
+//     for(int i=2;i<=n;i++){
+//         flag = 1;
+//         for(int j=2;j<=i/2;j++){
+//             if(i%j==0){
+//                 flag = 0;
+//             }
+//         }
+//         if(flag==1){
+//             cout<<i<<endl;
+//         }
+//     }
+//     return 0;
+// }

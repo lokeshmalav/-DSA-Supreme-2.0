@@ -1,36 +1,30 @@
 #include<iostream>
 using namespace std;
+
+
 int main(){
-    int no;
-    cin>>no;
-    int i=1;
-    int n = 2*no-1;
-    while(i<=(no)){
-        int gaps = n-2*i+1,k=1;
-        int j = i;
-        while(k<=gaps/2){
-            cout<<" ";
-            k = k + 1;
+    int n;
+    cin>>n;
+    int i=0;
+    while(i<n){
+        int count = n-i,k=1;
+        while(k<=count){
+            cout<<k;
+            k++;
         }
-        int ch = n - gaps, z = (ch+1)/2;
-        while(z>=1){
-            cout<<j;
-            j = j + 1;
-            z = z - 1;
+        count = n-i;
+        int stars = 2*i;
+        while(stars>0){
+            cout<<"*";
+            stars--;
         }
-        j = j - 1;
-        z = (ch-1)/2;
-        while(z>=1){
-            j = j - 1;
-            cout<<j;
-            z = z - 1;
-        }
-        k = 1;
-        while(k<=gaps/2){
-            cout<<" ";
-            k = k + 1;
+        count = n-i;
+        while(count>0){
+            cout<<count;
+            count--;
         }
         cout<<"\n";
-        i = i + 1;
+        i++;
     }
 }
+
